@@ -7,6 +7,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import org.academiadecodigo.hackathon.Navigation;
 import org.academiadecodigo.hackathon.model.User;
+import org.academiadecodigo.hackathon.model.Wallet;
 import org.academiadecodigo.hackathon.service.UserService;
 
 public class LoginController implements Controller {
@@ -132,7 +133,14 @@ public class LoginController implements Controller {
             return;
         }
 
-        userService.addUser(new User(usernameField.getText(),passwordField.getText(), emailField.getText()));
+        if (userService.findbyEmail(emailField.getText()) != null) {
+            showConsoleText("username taken");
+            return;
+        }
+
+        User user = new User(usernameField.getText(),passwordField.getText(), emailField.getText());
+        user.setWallet(new Wallet());
+        userService.addUser(user);
 
         showLogin();
         showConsoleText("registration successful");
