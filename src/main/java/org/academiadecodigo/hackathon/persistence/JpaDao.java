@@ -1,5 +1,7 @@
 package org.academiadecodigo.hackathon.persistence;
 
+import org.academiadecodigo.hackathon.model.User;
+
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
@@ -51,7 +53,17 @@ public abstract class JpaDao<T> implements Dao<T> {
 
         try {
 
-            return em.find(t, id);
+            CriteriaBuilder builder = getEm().getCriteriaBuilder();
+
+            CriteriaQuery<T> criteriaQuery = builder.createQuery(t);
+
+            Root<T> root = criteriaQuery.from(t);
+
+            criteriaQuery.select(root);
+
+            criteriaQuery.where(builder.equal(root.get("id"), id));
+
+            return getEm().createQuery(criteriaQuery).getSingleResult();
 
         } catch (NoResultException e) {
 
