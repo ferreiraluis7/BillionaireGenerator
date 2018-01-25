@@ -3,6 +3,7 @@ package org.academiadecodigo.hackathon;
 import javafx.stage.Stage;
 import org.academiadecodigo.hackathon.controller.LoginController;
 import org.academiadecodigo.hackathon.model.User;
+import org.academiadecodigo.hackathon.model.Wallet;
 import org.academiadecodigo.hackathon.persistence.AppUserDao;
 import org.academiadecodigo.hackathon.persistence.UserDao;
 import org.academiadecodigo.hackathon.service.AppUserService;
@@ -34,11 +35,11 @@ public class Test extends javafx.application.Application {
 
         primaryStage.setTitle("Billionaire Generator");
         primaryStage.show();*/
-
-        User user = new User("soraia", "sss", "soraia@gmail.com");
-        User user1 = new User();
         UserService service = (UserService) applicationContext.getBean("userService");
+        User user = new User("soraia", "sss", "soraia@gmail.com");
         service.addUser(user);
+        User user1 = service.findbyName("soraia");
+        user1.setWallet(new Wallet());
         service.addUser(user1);
 
     }
