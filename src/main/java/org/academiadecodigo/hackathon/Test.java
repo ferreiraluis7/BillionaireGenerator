@@ -37,10 +37,9 @@ public class Test extends javafx.application.Application {
         primaryStage.show();*/
         UserService service = (UserService) applicationContext.getBean("userService");
         User user = new User("soraia", "sss", "soraia@gmail.com");
+        user.setWallet(new Wallet());
         service.addUser(user);
-        User user1 = service.findbyName("soraia");
-        user1.setWallet(new Wallet());
-        service.addUser(user1);
+
 
     }
 }
