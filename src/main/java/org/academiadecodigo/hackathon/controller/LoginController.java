@@ -43,6 +43,11 @@ public class LoginController implements Controller {
     @FXML
     private Hyperlink switchLink;
 
+    public LoginController(UserService userService, Navigation navigation){
+        this.userService = userService;
+        this.navigation = navigation;
+    }
+
     public void initialize() {
 
         if (userService == null) {
