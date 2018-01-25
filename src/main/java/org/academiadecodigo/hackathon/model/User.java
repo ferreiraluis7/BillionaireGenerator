@@ -1,8 +1,8 @@
-package org.academiadecodigo.hackathon.models;
+package org.academiadecodigo.hackathon.model;
 
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,6 +13,7 @@ public class User extends AbstractModel {
     private String username;
     private String email;
     private String password;
+    @OneToOne
     private Wallet wallet;
 
     public User(){};

@@ -1,6 +1,6 @@
 package org.academiadecodigo.hackathon.service;
 
-import org.academiadecodigo.hackathon.models.User;
+import org.academiadecodigo.hackathon.model.User;
 
 public interface UserService {
 

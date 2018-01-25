@@ -5,6 +5,8 @@ import org.academiadecodigo.hackathon.controller.LoginController;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.persistence.EntityManagerFactory;
+
 public class Test extends javafx.application.Application {
 
     public static void main(String[] args) {
