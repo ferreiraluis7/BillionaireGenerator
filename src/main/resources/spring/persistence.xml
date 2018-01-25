@@ -27,7 +27,7 @@
 
     <bean id="emFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="persistenceUnitName" value="unit"/>
+        <property name="persistenceUnitName" value="cryptounit"/>
         <property name="packagesToScan" value="org.academiadecodigo.hackathon.model"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
@@ -36,6 +36,7 @@
             <map>
                 <entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
                 <entry key="hibernate.show_sql" value="true"/>
+
                 <!-- WARNING: Will re-create the database schema, causing data loss-->
                 <entry key="hibernate.hbm2ddl.auto" value="create"/>
             </map>

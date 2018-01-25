@@ -166,6 +166,14 @@ public class LoginController implements Controller {
 
     }
 
+    public UserService getUserService() {
+        return userService;
+    }
+
+    public Navigation getNavigation() {
+        return navigation;
+    }
+
     public void setUserService(UserService userService) {
         this.userService = userService;
     }

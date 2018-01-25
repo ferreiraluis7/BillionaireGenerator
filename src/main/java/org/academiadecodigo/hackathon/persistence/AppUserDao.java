@@ -6,6 +6,8 @@ import javax.persistence.NoResultException;
 
 public class AppUserDao extends JpaDao<User> implements UserDao<User> {
 
+
+
     public AppUserDao(){
         super(User.class);
     }
@@ -33,4 +35,6 @@ public class AppUserDao extends JpaDao<User> implements UserDao<User> {
             return null;
         }
     }
+
+
 }

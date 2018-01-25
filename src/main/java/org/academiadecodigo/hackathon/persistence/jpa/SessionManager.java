@@ -6,9 +6,13 @@ import javax.persistence.PersistenceUnit;
 
 public class SessionManager {
 
-    @PersistenceUnit(name = "unit")
+    @PersistenceUnit(unitName = "cryptounit")
     private EntityManagerFactory emf ;
     private EntityManager em;
+
+    public SessionManager(){
+
+    }
 
 
     public void startSession(){

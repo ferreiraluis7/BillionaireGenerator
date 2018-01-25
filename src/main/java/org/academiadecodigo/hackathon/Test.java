@@ -15,7 +15,7 @@ public class Test extends javafx.application.Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("/spring/spring-config.xml");
         Navigation navigation = applicationContext.getBean("navigation", Navigation.class);
 
         navigation.setStage(primaryStage);

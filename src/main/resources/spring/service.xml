@@ -4,5 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+    <bean id = "userService" class="org.academiadecodigo.hackathon.service.AppUserService">
+        <constructor-arg name = "userDao" ref="userDao"/>
+    </bean>
 
 </beans>
