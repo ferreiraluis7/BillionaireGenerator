@@ -29,4 +29,19 @@ public class Wallet {
     public void setdAmount(double dAmount) {
         this.dAmount = dAmount;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Wallet wallet = (Wallet) o;
+
+        return id == wallet.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
 }
