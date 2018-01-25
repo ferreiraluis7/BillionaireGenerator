@@ -1,9 +1,8 @@
 package org.academiadecodigo.hackathon.persistence;
 
-public interface UserDao {
+public interface UserDao<User> extends Dao<User> {
 
-    void saveOrUpdate(User user);
-    void delete(User user);
+
     User findByName(String username);
     User findByEmail(String email);
 }
