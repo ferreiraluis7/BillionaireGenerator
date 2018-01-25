@@ -1,10 +1,11 @@
 package org.academiadecodigo.hackathon.service;
 
+import org.academiadecodigo.hackathon.models.User;
 import org.academiadecodigo.hackathon.persistence.UserDao;
 
 public class AppUserService implements UserService {
 
-    private UserDao dao;
+    private UserDao<User> dao;
 
     public void addUser(User user) {
         dao.saveOrUpdate(user);
@@ -19,10 +20,10 @@ public class AppUserService implements UserService {
     }
 
     public User findbyName(String username) {
-        dao.findByName(username);
+        return dao.findByName(username);
     }
 
     public User findbyEmail(String email) {
-        dao.findByEmail(email);
+        return dao.findByEmail(email);
     }
 }

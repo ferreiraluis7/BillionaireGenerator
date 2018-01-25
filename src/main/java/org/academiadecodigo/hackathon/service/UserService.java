@@ -1,5 +1,7 @@
 package org.academiadecodigo.hackathon.service;
 
+import org.academiadecodigo.hackathon.models.User;
+
 public interface UserService {
 
     void addUser(User user);

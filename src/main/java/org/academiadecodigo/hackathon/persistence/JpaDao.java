@@ -56,4 +56,8 @@ public abstract class JpaDao<T> implements Dao<T> {
             return null;
         }
     }
+
+    public EntityManager getEm() {
+        return em;
+    }
 }
