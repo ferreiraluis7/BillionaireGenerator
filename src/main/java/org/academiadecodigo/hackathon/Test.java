@@ -5,7 +5,7 @@ import org.academiadecodigo.hackathon.controller.LoginController;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Main extends javafx.application.Application {
+public class Test extends javafx.application.Application {
 
     public static void main(String[] args) {
         launch(args);
