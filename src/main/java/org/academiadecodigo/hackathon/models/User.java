@@ -1,12 +1,21 @@
 package org.academiadecodigo.hackathon.models;
 
-public class User {
 
-    private Integer id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "customer")
+public class User extends AbstractModel {
+
+
     private String username;
     private String email;
     private String password;
     private Wallet wallet;
+
+    public User(){};
 
     public User(String username, String password, String email){
         this.username = username;
@@ -15,13 +24,7 @@ public class User {
         wallet = new Wallet();
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;

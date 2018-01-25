@@ -1,21 +1,18 @@
 package org.academiadecodigo.hackathon.models;
 
-public class Wallet {
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-    private int id;
+@Entity
+@Table(name = "wallet")
+public class Wallet extends AbstractModel {
+
+
     private double cAmount;
     private double dAmount;
 
     public Wallet(){
         dAmount = 500;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public double getcAmount() {
@@ -41,11 +38,18 @@ public class Wallet {
 
         Wallet wallet = (Wallet) o;
 
-        return id == wallet.id;
+        if (Double.compare(wallet.cAmount, cAmount) != 0) return false;
+        return Double.compare(wallet.dAmount, dAmount) == 0;
     }
 
     @Override
     public int hashCode() {
-        return id;
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(cAmount);
+        result = (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(dAmount);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 }
