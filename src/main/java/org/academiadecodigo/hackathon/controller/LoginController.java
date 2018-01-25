@@ -6,6 +6,8 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import org.academiadecodigo.hackathon.Navigation;
+import org.academiadecodigo.hackathon.models.User;
+import org.academiadecodigo.hackathon.service.UserService;
 
 public class LoginController implements Controller {
 
@@ -120,7 +122,7 @@ public class LoginController implements Controller {
             return;
         }
 
-        if (userService.findByName(usernameField.getText()) != null) {
+        if (userService.findbyName(usernameField.getText()) != null) {
             showConsoleText("username taken");
             return;
         }
