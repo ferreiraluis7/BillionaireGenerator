@@ -1,10 +1,22 @@
 package org.academiadecodigo.hackathon.model;
 
-public class Currency {
+public final class Currency {
 
+    private static Currency instance;
     private double supply;
     public static final double limit = 300;
     private double rate;
+
+    private Currency(){
+
+    }
+
+    public static synchronized Currency getInstance(){
+        if(instance == null){
+            instance = new Currency();
+        }
+        return instance;
+    }
 
     public double getSupply() {
         return supply;
@@ -25,4 +37,5 @@ public class Currency {
     public void setRate(double rate) {
         this.rate = rate;
     }
+
 }
