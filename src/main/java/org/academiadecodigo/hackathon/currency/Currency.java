@@ -1,12 +1,16 @@
 package org.academiadecodigo.hackathon.currency;
 
 
+import org.academiadecodigo.hackathon.controller.Controller;
+import org.academiadecodigo.hackathon.controller.UserWalletController;
+
 import java.text.DecimalFormat;
 
 public class Currency implements Runnable {
 
-    public static final double limit = 300;
+
     private static Double rate = 1.0;
+
 
     public static double getRate() {
         return rate;
