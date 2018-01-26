@@ -79,11 +79,6 @@ public class LoginController implements Controller {
 
         messageLabel.setVisible(false);
 
-
-
-        gridPane.add(emailLabel, 1, 3);
-        gridPane.add(emailField, 2, 3);
-
         loginBtn.setText("Submit");
         switchLink.setText("Cancel");
 
