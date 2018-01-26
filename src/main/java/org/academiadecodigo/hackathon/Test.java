@@ -38,13 +38,14 @@ public class Test extends javafx.application.Application {
 
         navigation.setStage(primaryStage);
 
-        navigation.loadScreen("login");
+        navigation.loadScreen("game");
         primaryStage.setResizable(false);
 
         primaryStage.setTitle("Billionaire Generator");
         primaryStage.show();
 
     }
+
 
 
 }
