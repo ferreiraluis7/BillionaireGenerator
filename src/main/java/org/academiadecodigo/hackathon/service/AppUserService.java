@@ -52,17 +52,28 @@ public class AppUserService implements UserService {
 
     @Override
     public void buy(double amount) {
+        currentUser = userDao.findByName(currentUser.getUsername());
         currentUser.getWallet().addCrypto(amount);
+        userDao.saveOrUpdate(currentUser);
     }
 
     @Override
     public void sell(double amount) {
+        currentUser = userDao.findByName(currentUser.getUsername());
         currentUser.getWallet().subtractCrypto(amount);
+        userDao.saveOrUpdate(currentUser);
     }
 
     @Override
     public void transfer(double amount, User user) {
+        User user1 = userDao.findByName(user.getUsername());
+        if(user1 == null){
+            return;
+        }
+        currentUser = userDao.findByName(currentUser.getUsername());
         currentUser.getWallet().sendCrypto(amount);
-        user.getWallet().receiveCrypto(amount);
+        user1.getWallet().receiveCrypto(amount);
+        userDao.saveOrUpdate(currentUser);
+        userDao.saveOrUpdate(user1);
     }
 }

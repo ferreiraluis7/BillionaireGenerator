@@ -1,10 +1,7 @@
 package org.academiadecodigo.hackathon.model;
 
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "customer")
@@ -14,10 +11,10 @@ public class User extends AbstractModel {
     private String email;
     private String password;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Wallet wallet;
 
-    public User(){};
+    public User(){}
 
     public User(String username, String password, String email){
         this.username = username;

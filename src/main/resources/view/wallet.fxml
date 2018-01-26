@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.controller.UserWalletController">
+   <children>
+      <ImageView fx:id="uparrow" fitHeight="105.0" fitWidth="106.0" layoutX="87.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../higher.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="sell" layoutX="652.0" layoutY="392.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="144.0" text="Sell" />
+      <Label fx:id="value" layoutX="218.0" layoutY="330.0" prefHeight="63.0" prefWidth="172.0" style="-fx-font-size: 50;" text="Label" />
+      <MenuBar prefHeight="32.0" prefWidth="1024.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Menu">
+            <items>
+                  <MenuItem fx:id="data" mnemonicParsing="false" text="Data" />
+              <MenuItem fx:id="logOut" mnemonicParsing="false" text="Log Out" />
+                  <MenuItem fx:id="close" mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Casino">
+            <items>
+              <MenuItem fx:id="BlaBlaBla" mnemonicParsing="false" text="BlaBlaBla" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="buy" layoutX="652.0" layoutY="284.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="144.0" text="Buy" />
+      <Button fx:id="transfer" layoutX="652.0" layoutY="501.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="144.0" text="Transfer" />
+      <TextField layoutX="642.0" layoutY="236.0" />
+      <TextField layoutX="642.0" layoutY="342.0" />
+      <TextField layoutX="642.0" layoutY="453.0" />
+      <Label layoutX="159.0" layoutY="591.0" style="-fx-font-size: 25px;" text="Dollars" />
+      <Label layoutX="686.0" layoutY="593.0" style="-fx-font-size: 25px;" text="CriptoCoins" />
+      <Label fx:id="dollar" layoutX="187.0" layoutY="629.0" text="0" />
+      <Label fx:id="criptoCoins" layoutX="749.0" layoutY="642.0" text="0" />
+      <ImageView fx:id="downarrow" fitHeight="105.0" fitWidth="106.0" layoutX="88.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../lower.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
