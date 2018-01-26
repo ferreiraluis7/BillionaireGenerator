@@ -158,7 +158,7 @@ public class LoginController implements Controller {
 
     private void showConsoleText(String text) {
 
-        messageLabel.setText("console.log(\"" + text + "\");");
+        messageLabel.setText(text);
         messageLabel.setVisible(true);
 
     }
