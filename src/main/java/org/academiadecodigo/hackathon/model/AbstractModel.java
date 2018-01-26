@@ -9,7 +9,6 @@ import java.sql.Date;
 @MappedSuperclass
 public abstract class AbstractModel {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

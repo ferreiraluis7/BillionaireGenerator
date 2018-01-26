@@ -9,8 +9,6 @@ import javax.persistence.criteria.Root;
 
 public class AppUserDao extends JpaDao<User> implements UserDao<User> {
 
-
-
     public AppUserDao(){
         super(User.class);
     }
