@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="768.0" maxWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.controller.LoginController">
+<Pane maxHeight="768.0" maxWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.controller.LoginController">
    <children>
       <Label layoutX="346.0" layoutY="397.0" prefHeight="17.0" prefWidth="121.0" text="Username">
          <font>
@@ -42,6 +41,6 @@
             <Font size="18.0" />
          </font>
       </Hyperlink>
-      <Label fx:id="messageLabel" contentDisplay="CENTER" layoutX="214.0" layoutY="635.0" prefHeight="27.0" prefWidth="600.0" textAlignment="CENTER" />
+      <Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="635.0" prefHeight="27.0" prefWidth="600.0" textAlignment="CENTER" />
    </children>
 </Pane>

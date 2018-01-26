@@ -17,37 +17,33 @@
             <Image url="@../higher.png" />
          </image>
       </ImageView>
-      <Button fx:id="sell" layoutX="652.0" layoutY="392.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="144.0" text="Sell" />
+      <Button fx:id="sell" alignment="CENTER" contentDisplay="CENTER" layoutX="672.0" layoutY="384.0" mnemonicParsing="false" onAction="#sell" prefHeight="35.0" prefWidth="144.0" text="Sell" textAlignment="CENTER" />
       <Label fx:id="value" layoutX="218.0" layoutY="330.0" prefHeight="63.0" prefWidth="172.0" style="-fx-font-size: 50;" text="Label" />
       <MenuBar prefHeight="32.0" prefWidth="1024.0">
         <menus>
           <Menu mnemonicParsing="false" text="Menu">
             <items>
-                  <MenuItem fx:id="data" mnemonicParsing="false" text="Data" />
-              <MenuItem fx:id="logOut" mnemonicParsing="false" text="Log Out" />
-                  <MenuItem fx:id="close" mnemonicParsing="false" text="Close" />
+                  <MenuItem fx:id="close" mnemonicParsing="false" onAction="#goBack" text="Back" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Casino">
-            <items>
-              <MenuItem fx:id="BlaBlaBla" mnemonicParsing="false" text="BlaBlaBla" />
-            </items>
-          </Menu>
+          <Menu mnemonicParsing="false" text="Casino" />
         </menus>
       </MenuBar>
-      <Button fx:id="buy" layoutX="652.0" layoutY="284.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="144.0" text="Buy" />
-      <Button fx:id="transfer" layoutX="652.0" layoutY="501.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="144.0" text="Transfer" />
-      <TextField layoutX="642.0" layoutY="236.0" />
-      <TextField layoutX="642.0" layoutY="342.0" />
-      <TextField layoutX="642.0" layoutY="453.0" />
-      <Label layoutX="159.0" layoutY="591.0" style="-fx-font-size: 25px;" text="Dollars" />
-      <Label layoutX="686.0" layoutY="593.0" style="-fx-font-size: 25px;" text="CriptoCoins" />
-      <Label fx:id="dollar" layoutX="187.0" layoutY="629.0" text="0" />
-      <Label fx:id="criptoCoins" layoutX="749.0" layoutY="642.0" text="0" />
+      <Button fx:id="buy" alignment="CENTER" contentDisplay="CENTER" layoutX="673.0" layoutY="274.0" mnemonicParsing="false" onAction="#buy" prefHeight="35.0" prefWidth="144.0" text="Buy" textAlignment="CENTER" />
+      <Button fx:id="transfer" alignment="CENTER" contentDisplay="CENTER" layoutX="673.0" layoutY="530.0" mnemonicParsing="false" onAction="#transfer" prefHeight="35.0" prefWidth="144.0" text="Transfer" textAlignment="CENTER" />
+      <TextField fx:id="buyField" alignment="CENTER" layoutX="641.0" layoutY="236.0" promptText="dollar amount" />
+      <TextField fx:id="sellField" alignment="CENTER" layoutX="642.0" layoutY="344.0" promptText="hackercoin amount" />
+      <TextField fx:id="transferField" alignment="CENTER" layoutX="641.0" layoutY="453.0" promptText="hackercoin amount" />
+      <Label layoutX="153.0" layoutY="603.0" style="-fx-font-size: 25px;" text="Dollars" />
+      <Label layoutX="670.0" layoutY="603.0" style="-fx-font-size: 25px;" text="HackerCoins" />
+      <Label fx:id="dollar" alignment="CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="642.0" prefHeight="17.0" prefWidth="112.0" text="0" textAlignment="CENTER" />
+      <Label fx:id="criptoCoins" alignment="CENTER" contentDisplay="CENTER" layoutX="698.0" layoutY="642.0" prefHeight="17.0" prefWidth="94.0" text="0" textAlignment="CENTER" />
       <ImageView fx:id="downarrow" fitHeight="105.0" fitWidth="106.0" layoutX="88.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../lower.png" />
          </image>
       </ImageView>
+      <Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="245.0" layoutY="675.0" prefHeight="35.0" prefWidth="535.0" textAlignment="CENTER" />
+      <TextField fx:id="emailField" alignment="CENTER" layoutX="641.0" layoutY="490.0" promptText="destination email" />
    </children>
 </Pane>

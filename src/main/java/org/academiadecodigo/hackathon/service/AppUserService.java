@@ -41,8 +41,9 @@ public class AppUserService implements UserService {
         return userDao.findByEmail(email);
     }
 
+    @Override
     public User getCurrentUser() {
-        return currentUser;
+        return findbyName(currentUser.getUsername());
     }
 
     @Override

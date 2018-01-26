@@ -46,3 +46,37 @@
 
 }
 
+.menu-bar{
+
+    -fx-background-color: #1cc538;
+    -fx-fill: #1cc538;
+    -fx-skin: #1cc538;
+
+}
+
+.menu-item {
+
+    -fx-background-color: #1cc538;
+    -fx-fill: #1cc538;
+
+}
+
+.menu-item:hover{
+
+    -fx-background-color: #1c9f37;
+
+}
+
+.menu-button{
+
+    -fx-background-color: #1cc538;
+    -fx-fill: #1cc538;
+
+}
+
+.context-menu{
+
+    -fx-background-color: #1cc538;
+    -fx-fill: #1cc538;
+
+}

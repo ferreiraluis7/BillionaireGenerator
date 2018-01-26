@@ -8,12 +8,18 @@
         <property name = "controllers">
             <map>
                 <entry key="LoginController" value-ref="loginController"/>
+                <entry key="UserWalletController" value-ref="walletController"/>
             </map>
         </property>
     </bean>
 
 
     <bean id = "loginController" class="org.academiadecodigo.hackathon.controller.LoginController">
+        <constructor-arg name="userService" ref="userService"/>
+        <constructor-arg name ="navigation" ref = "navigation"/>
+    </bean>
+
+    <bean id = "walletController" class="org.academiadecodigo.hackathon.controller.UserWalletController">
         <constructor-arg name="userService" ref="userService"/>
         <constructor-arg name ="navigation" ref = "navigation"/>
     </bean>

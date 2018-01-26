@@ -1,14 +1,15 @@
 package org.academiadecodigo.hackathon.model;
 
+import org.academiadecodigo.hackathon.currency.Currency;
+
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.text.DecimalFormat;
 
 @Entity
 @Table(name = "wallet")
 public class Wallet extends AbstractModel {
 
-    private double rate = Currency.getInstance().getRate();
     private double cAmount;
     private double dAmount = 500;
 
@@ -16,9 +17,12 @@ public class Wallet extends AbstractModel {
     }
 
     public void addCrypto(double amount){
+
+
         if(amount <= dAmount){
             dAmount -= amount;
-            cAmount += amount*rate;
+            cAmount += amount*Currency.getRate();
+
         }
         else{
             System.out.println("Not enough funds");
@@ -26,9 +30,11 @@ public class Wallet extends AbstractModel {
     }
 
     public void subtractCrypto(double amount){
+
+
         if(amount <= cAmount){
             cAmount -= amount;
-            dAmount += amount/rate;
+            dAmount += amount/Currency.getRate();
         }
         else{
             System.out.println("Not enough funds");
@@ -36,6 +42,7 @@ public class Wallet extends AbstractModel {
     }
 
     public void sendCrypto(double amount){
+
         if(amount <= cAmount){
             cAmount -= amount;
         }
@@ -49,7 +56,9 @@ public class Wallet extends AbstractModel {
     }
 
     public double getcAmount() {
-        return cAmount;
+        DecimalFormat round = new DecimalFormat("#.##");
+
+        return Double.parseDouble(round.format(cAmount));
     }
 
     public void setcAmount(double cAmount) {
@@ -57,7 +66,9 @@ public class Wallet extends AbstractModel {
     }
 
     public double getdAmount() {
-        return dAmount;
+        DecimalFormat round = new DecimalFormat("#.##");
+
+        return Double.parseDouble(round.format(dAmount));
     }
 
     public void setdAmount(double dAmount) {

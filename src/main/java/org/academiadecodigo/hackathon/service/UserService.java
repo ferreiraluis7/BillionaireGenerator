@@ -13,4 +13,5 @@ public interface UserService {
     void buy(double amount);
     void sell(double amount);
     void transfer(double amount, User user);
+    User getCurrentUser();
 }

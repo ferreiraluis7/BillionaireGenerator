@@ -64,13 +64,14 @@ public class LoginController implements Controller {
     private void showLogin() {
 
         login = true;
+        usernameField.setText("");
+        passwordField.setText("");
+        emailField.setText("");
 
         messageLabel.setVisible(false);
         emailField.setVisible(false);
         emailLabel.setVisible(false);
 
-        //gridPane.getChildren().remove(emailField);
-        //gridPane.getChildren().remove(emailField);
 
         loginBtn.setText("Login");
         switchLink.setText("Register");
@@ -80,6 +81,9 @@ public class LoginController implements Controller {
     private void showRegister() {
 
         login = false;
+        usernameField.setText("");
+        passwordField.setText("");
+        emailField.setText("");
 
         messageLabel.setVisible(false);
         emailField.setVisible(true);
@@ -93,57 +97,52 @@ public class LoginController implements Controller {
     private void doLogin() {
 
         if (usernameField.getText().isEmpty()) {
-            showConsoleText("username missing");
+            showConsoleText("Username missing");
             return;
         }
 
         if (passwordField.getText().isEmpty()) {
-            showConsoleText("password missing");
+            showConsoleText("Password missing");
             return;
         }
 
         if (!userService.authenticate(usernameField.getText(), Security.getHash(passwordField.getText()))) {
-            showConsoleText("authentication failed");
+            showConsoleText("Authentication failed");
             return;
         }
 
         User user =  userService.findbyName(usernameField.getText());
         userService.setCurrentUser(user);
 
-        showConsoleText("login accepted");
-        //navigation.loadScreen();
+        showConsoleText("Login accepted");
+        navigation.loadScreen("wallet");
 
     }
 
     private void doRegister() {
 
         if (usernameField.getText().isEmpty()) {
-            showConsoleText("username missing");
+            showConsoleText("Username missing");
             return;
         }
 
         if (passwordField.getText().isEmpty()) {
-            showConsoleText("password missing");
+            showConsoleText("Password missing");
             return;
         }
 
         if (emailField.getText().isEmpty()) {
-            showConsoleText("email missing");
+            showConsoleText("Email missing");
             return;
         }
 
         if (!emailField.getText().contains("@")) {
-            showConsoleText("enter a proper email");
+            showConsoleText("Enter a proper email");
             return;
         }
 
         if (userService.findbyName(usernameField.getText()) != null) {
-            showConsoleText("username taken");
-            return;
-        }
-
-        if (userService.findbyEmail(emailField.getText()) != null) {
-            showConsoleText("username taken");
+            showConsoleText("Username taken");
             return;
         }
 
@@ -152,7 +151,7 @@ public class LoginController implements Controller {
         userService.addUser(user);
 
         showLogin();
-        showConsoleText("registration successful");
+        showConsoleText("Registration successful");
 
     }
 
