@@ -9,4 +9,5 @@ public interface UserService {
     boolean authenticate(String username, String password);
     User findbyName(String username);
     User findbyEmail(String email);
+    void setCurrentUser(User currentUser);
 }

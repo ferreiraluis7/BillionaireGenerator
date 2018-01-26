@@ -8,6 +8,7 @@ import javafx.scene.layout.GridPane;
 import org.academiadecodigo.hackathon.Navigation;
 import org.academiadecodigo.hackathon.model.User;
 import org.academiadecodigo.hackathon.model.Wallet;
+import org.academiadecodigo.hackathon.service.AppUserService;
 import org.academiadecodigo.hackathon.service.UserService;
 
 public class LoginController implements Controller {
@@ -100,6 +101,9 @@ public class LoginController implements Controller {
             showConsoleText("authentication failed");
             return;
         }
+
+        User user =  userService.findbyName(usernameField.getText());
+        userService.setCurrentUser(user);
 
         showConsoleText("login accepted");
         //navigation.loadScreen();
