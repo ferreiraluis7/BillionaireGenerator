@@ -171,6 +171,7 @@ public class LoginController implements Controller {
             doRegister();
         }
 
+
     }
 
     public void onLink(MouseEvent event) {
