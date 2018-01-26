@@ -64,9 +64,12 @@ public class LoginController implements Controller {
         login = true;
 
         messageLabel.setVisible(false);
+        emailField.setVisible(false);
+        emailLabel.setVisible(false);
 
-        gridPane.getChildren().remove(emailField);
-        gridPane.getChildren().remove(emailField);
+
+        //gridPane.getChildren().remove(emailField);
+        //gridPane.getChildren().remove(emailField);
 
         loginBtn.setText("Login");
         switchLink.setText("Register");
@@ -78,6 +81,8 @@ public class LoginController implements Controller {
         login = false;
 
         messageLabel.setVisible(false);
+        emailField.setVisible(true);
+        emailLabel.setVisible(true);
 
         loginBtn.setText("Submit");
         switchLink.setText("Cancel");
@@ -91,7 +96,7 @@ public class LoginController implements Controller {
             return;
         }
 
-        if (passwordField.getText().isEmpty()) {
+        if (passwordField.getText().isEmpty() || !passwordField.getText().contains("@")) {
             showConsoleText("password missing");
             return;
         }
