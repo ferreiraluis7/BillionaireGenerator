@@ -43,24 +43,26 @@ public class Navigation {
 
     }
 
-    public Parent loadView(String param) {
+    public Parent loadView(String view) {
 
         Parent root = null;
 
         try {
 
             FXMLLoader fxmlLoader;
-            fxmlLoader = new FXMLLoader(getClass().getResource(VIEW_PATH + "/" + param + ".fxml"));
+            fxmlLoader = new FXMLLoader(getClass().getResource(VIEW_PATH + "/" + view + ".fxml"));
+
             fxmlLoader.setControllerFactory(new Callback<Class<?>, Object>() {
                 @Override
                 public Object call(Class<?> param){
                     return controllers.get(param.getSimpleName());
                 }
             });
+
             root = fxmlLoader.load();
 
         } catch (IOException e) {
-            System.out.println("Failure to load view " + param + " : " + e.getMessage());
+            System.out.println("Failure to load view " + view + " : " + e.getMessage());
             e.printStackTrace();
         }
 

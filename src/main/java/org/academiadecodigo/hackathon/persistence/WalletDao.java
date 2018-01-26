@@ -1,4 +1,4 @@
 package org.academiadecodigo.hackathon.persistence;
 
-public interface WalletDao {
+public interface WalletDao<Wallet> {
 }

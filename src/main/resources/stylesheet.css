@@ -27,7 +27,6 @@
 .text-field{
 
     -fx-font-size: 16px;
-    -fx-text-fill: white;
 
 }
 
@@ -46,3 +45,4 @@
     -fx-background-color: #e4e4e4;
 
 }
+

@@ -7,6 +7,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import org.academiadecodigo.hackathon.Navigation;
 import org.academiadecodigo.hackathon.model.User;
+import org.academiadecodigo.hackathon.model.Wallet;
+import org.academiadecodigo.hackathon.service.AppUserService;
 import org.academiadecodigo.hackathon.service.UserService;
 
 public class LoginController implements Controller {
@@ -63,9 +65,12 @@ public class LoginController implements Controller {
         login = true;
 
         messageLabel.setVisible(false);
+        emailField.setVisible(false);
+        emailLabel.setVisible(false);
 
-        gridPane.getChildren().remove(emailField);
-        gridPane.getChildren().remove(emailField);
+
+        //gridPane.getChildren().remove(emailField);
+        //gridPane.getChildren().remove(emailField);
 
         loginBtn.setText("Login");
         switchLink.setText("Register");
@@ -77,11 +82,8 @@ public class LoginController implements Controller {
         login = false;
 
         messageLabel.setVisible(false);
-
-
-
-        gridPane.add(emailLabel, 1, 3);
-        gridPane.add(emailField, 2, 3);
+        emailField.setVisible(true);
+        emailLabel.setVisible(true);
 
         loginBtn.setText("Submit");
         switchLink.setText("Cancel");
@@ -105,6 +107,9 @@ public class LoginController implements Controller {
             return;
         }
 
+        User user =  userService.findbyName(usernameField.getText());
+        userService.setCurrentUser(user);
+
         showConsoleText("login accepted");
         //navigation.loadScreen();
 
@@ -127,12 +132,24 @@ public class LoginController implements Controller {
             return;
         }
 
+        if (!emailField.getText().contains("@")) {
+            showConsoleText("enter a proper email");
+            return;
+        }
+
         if (userService.findbyName(usernameField.getText()) != null) {
             showConsoleText("username taken");
             return;
         }
 
-        userService.addUser(new User(usernameField.getText(),passwordField.getText(), emailField.getText()));
+        if (userService.findbyEmail(emailField.getText()) != null) {
+            showConsoleText("username taken");
+            return;
+        }
+
+        User user = new User(usernameField.getText(),passwordField.getText(), emailField.getText());
+        user.setWallet(new Wallet());
+        userService.addUser(user);
 
         showLogin();
         showConsoleText("registration successful");
@@ -141,7 +158,7 @@ public class LoginController implements Controller {
 
     private void showConsoleText(String text) {
 
-        messageLabel.setText("console.log(\"" + text + "\");");
+        messageLabel.setText(text);
         messageLabel.setVisible(true);
 
     }
@@ -153,6 +170,7 @@ public class LoginController implements Controller {
         } else {
             doRegister();
         }
+
 
     }
 
