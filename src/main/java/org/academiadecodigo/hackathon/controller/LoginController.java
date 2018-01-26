@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import org.academiadecodigo.hackathon.Navigation;
+import org.academiadecodigo.hackathon.Security;
 import org.academiadecodigo.hackathon.model.User;
 import org.academiadecodigo.hackathon.model.Wallet;
 import org.academiadecodigo.hackathon.service.AppUserService;
@@ -102,7 +103,7 @@ public class LoginController implements Controller {
             return;
         }
 
-        if (!userService.authenticate(usernameField.getText(), passwordField.getText())) {
+        if (!userService.authenticate(usernameField.getText(), Security.getHash(passwordField.getText()))) {
             showConsoleText("authentication failed");
             return;
         }
@@ -147,7 +148,7 @@ public class LoginController implements Controller {
             return;
         }
 
-        User user = new User(usernameField.getText(),passwordField.getText(), emailField.getText());
+        User user = new User(usernameField.getText(), Security.getHash(passwordField.getText()), emailField.getText());
         user.setWallet(new Wallet());
         userService.addUser(user);
 
