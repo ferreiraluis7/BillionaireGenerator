@@ -1,5 +1,6 @@
 package org.academiadecodigo.hackathon.controller;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,8 +9,12 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import org.academiadecodigo.hackathon.Navigation;
+import org.academiadecodigo.hackathon.currency.Currency;
 import org.academiadecodigo.hackathon.model.User;
 import org.academiadecodigo.hackathon.service.UserService;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class UserWalletController implements Controller {
 
@@ -69,6 +74,10 @@ public class UserWalletController implements Controller {
 
     private Navigation navigation;
 
+    private Double prevCurr = 1.0;
+
+
+
 
     public UserWalletController(UserService userService, Navigation navigation) {
         this.userService = userService;
@@ -78,9 +87,35 @@ public class UserWalletController implements Controller {
     public void initialize(){
         if(this.userService == null){
             throw new IllegalStateException("Unable to load user service from registry");
-        }
 
+        }
         updateBudget();
+        Timer timer = new Timer();
+
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        Double newCurr = Currency.getRate();
+
+                        value.setText("" + newCurr);
+                        if(prevCurr < newCurr){
+                            uparrow.setVisible(true);
+                            downarrow.setVisible(false);
+                        }else{
+                            downarrow.setVisible(true);
+                            uparrow.setVisible(false);
+                        }
+                        prevCurr = newCurr;
+
+                    }
+                });
+
+            }
+        }, 0, 5000);
     }
 
     private void updateBudget() {
@@ -158,6 +193,4 @@ public class UserWalletController implements Controller {
         sellField.setText("");
         transferField.setText("");
     }
-
-
 }

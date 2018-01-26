@@ -1,7 +1,9 @@
 package org.academiadecodigo.hackathon;
 
 import javafx.stage.Stage;
+import org.academiadecodigo.hackathon.controller.Controller;
 import org.academiadecodigo.hackathon.controller.LoginController;
+import org.academiadecodigo.hackathon.controller.UserWalletController;
 import org.academiadecodigo.hackathon.currency.Currency;
 import org.academiadecodigo.hackathon.model.User;
 import org.academiadecodigo.hackathon.model.Wallet;
@@ -18,6 +20,7 @@ public class Test extends javafx.application.Application {
 
     private Thread t1;
 
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -32,8 +35,7 @@ public class Test extends javafx.application.Application {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("/spring/spring-config.xml");
         Navigation navigation = applicationContext.getBean("navigation", Navigation.class);
 
-        Currency currency = new Currency();
-        t1 = new Thread(currency);
+        t1 = new Thread(new Currency());
         t1.start();
 
         navigation.setStage(primaryStage);
