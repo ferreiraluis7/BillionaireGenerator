@@ -97,7 +97,7 @@ public class LoginController implements Controller {
             return;
         }
 
-        if (passwordField.getText().isEmpty() || !passwordField.getText().contains("@")) {
+        if (passwordField.getText().isEmpty()) {
             showConsoleText("password missing");
             return;
         }
@@ -129,6 +129,11 @@ public class LoginController implements Controller {
 
         if (emailField.getText().isEmpty()) {
             showConsoleText("email missing");
+            return;
+        }
+
+        if (!emailField.getText().contains("@")) {
+            showConsoleText("enter a proper email");
             return;
         }
 
