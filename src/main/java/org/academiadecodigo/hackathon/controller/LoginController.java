@@ -69,7 +69,6 @@ public class LoginController implements Controller {
         emailField.setVisible(false);
         emailLabel.setVisible(false);
 
-
         //gridPane.getChildren().remove(emailField);
         //gridPane.getChildren().remove(emailField);
 
@@ -86,7 +85,7 @@ public class LoginController implements Controller {
         emailField.setVisible(true);
         emailLabel.setVisible(true);
 
-        loginBtn.setText("Submit");
+        loginBtn.setText("Register");
         switchLink.setText("Cancel");
 
     }

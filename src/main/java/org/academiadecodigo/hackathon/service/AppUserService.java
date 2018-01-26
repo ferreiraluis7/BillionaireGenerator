@@ -12,9 +12,7 @@ public class AppUserService implements UserService {
     private UserDao<User> userDao;
 
     public AppUserService(UserDao userDao){
-
         this.userDao = userDao;
-
     }
 
     @Override
@@ -52,4 +50,19 @@ public class AppUserService implements UserService {
         this.currentUser = currentUser;
     }
 
+    @Override
+    public void buy(double amount) {
+        currentUser.getWallet().addCrypto(amount);
+    }
+
+    @Override
+    public void sell(double amount) {
+        currentUser.getWallet().subtractCrypto(amount);
+    }
+
+    @Override
+    public void transfer(double amount, User user) {
+        currentUser.getWallet().sendCrypto(amount);
+        user.getWallet().receiveCrypto(amount);
+    }
 }

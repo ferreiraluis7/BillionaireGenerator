@@ -10,4 +10,7 @@ public interface UserService {
     User findbyName(String username);
     User findbyEmail(String email);
     void setCurrentUser(User currentUser);
+    void buy(double amount);
+    void sell(double amount);
+    void transfer(double amount, User user);
 }

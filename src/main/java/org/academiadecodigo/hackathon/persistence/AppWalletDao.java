@@ -7,4 +7,6 @@ public class AppWalletDao extends JpaDao<Wallet> implements WalletDao<Wallet> {
     public AppWalletDao(){
         super(Wallet.class);
     }
+
+
 }

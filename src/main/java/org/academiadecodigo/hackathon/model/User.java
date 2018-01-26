@@ -10,14 +10,12 @@ import javax.persistence.Table;
 @Table(name = "customer")
 public class User extends AbstractModel {
 
-
     private String username;
     private String email;
     private String password;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Wallet wallet;
-
 
     public User(){};
 
@@ -26,8 +24,6 @@ public class User extends AbstractModel {
         this.password = password;
         this.email = email;
     }
-
-
 
     public String getUsername() {
         return username;
