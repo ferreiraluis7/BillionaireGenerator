@@ -2,6 +2,7 @@ package org.academiadecodigo.hackathon.persistence;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -10,6 +11,7 @@ import java.util.List;
 
 public abstract class JpaDao<T> implements Dao<T> {
 
+    @PersistenceContext
     private EntityManager em;
     private Class<T> t;
 

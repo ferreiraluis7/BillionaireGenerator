@@ -1,4 +1,4 @@
-package org.academiadecodigo.hackathon.models;
+package org.academiadecodigo.hackathon.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

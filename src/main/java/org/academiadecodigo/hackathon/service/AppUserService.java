@@ -1,29 +1,42 @@
 package org.academiadecodigo.hackathon.service;
 
-import org.academiadecodigo.hackathon.models.User;
+import org.academiadecodigo.hackathon.model.User;
 import org.academiadecodigo.hackathon.persistence.UserDao;
 
 public class AppUserService implements UserService {
 
-    private UserDao<User> dao;
+    private User currentUser;
+
+    private UserDao<User> userDao;
+
+    public AppUserService(UserDao userDao){
+
+        this.userDao = userDao;
+
+    }
 
     public void addUser(User user) {
-        dao.saveOrUpdate(user);
+        userDao.saveOrUpdate(user);
     }
 
     public void removeUser(User user) {
-        dao.delete(user);
+        userDao.delete(user);
     }
 
-    public boolean authenticate(String username, String email) {
-        return findbyName(username)!= null && findbyEmail(email) != null;
+    public boolean authenticate(String username, String password) {
+        User user = findbyName(username);
+        return user != null && user.getPassword().equals(password);
     }
 
     public User findbyName(String username) {
-        return dao.findByName(username);
+        return userDao.findByName(username);
     }
 
     public User findbyEmail(String email) {
-        return dao.findByEmail(email);
+        return userDao.findByEmail(email);
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
     }
 }

@@ -1,10 +1,12 @@
 package org.academiadecodigo.hackathon.persistence;
 
-import org.academiadecodigo.hackathon.models.User;
+import org.academiadecodigo.hackathon.model.User;
 
 import javax.persistence.NoResultException;
 
 public class AppUserDao extends JpaDao<User> implements UserDao<User> {
+
+
 
     public AppUserDao(){
         super(User.class);
@@ -33,4 +35,6 @@ public class AppUserDao extends JpaDao<User> implements UserDao<User> {
             return null;
         }
     }
+
+
 }
