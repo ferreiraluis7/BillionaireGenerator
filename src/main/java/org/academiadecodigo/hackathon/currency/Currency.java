@@ -1,8 +1,6 @@
 package org.academiadecodigo.hackathon.currency;
 
 
-import org.academiadecodigo.hackathon.controller.Controller;
-import org.academiadecodigo.hackathon.controller.UserWalletController;
 
 import java.text.DecimalFormat;
 
@@ -52,7 +50,7 @@ public class Currency implements Runnable {
 
             rate = temprate;
 
-            System.out.println(rate);
+
 
             try {
                 Thread.sleep(5000);

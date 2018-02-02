@@ -1,6 +1,6 @@
 package org.academiadecodigo.hackathon.persistence;
 
-import org.academiadecodigo.hackathon.model.User;
+
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;

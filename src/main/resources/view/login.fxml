@@ -32,7 +32,7 @@
       <TextField fx:id="usernameField" layoutX="527.0" layoutY="394.0" promptText="username" />
       <ImageView fitHeight="325.0" fitWidth="448.0" layoutX="325.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../logo.png" />
+            <Image url="@img/logo.png" />
          </image>
       </ImageView>
       <Button fx:id="loginBtn" layoutX="396.0" layoutY="547.0" mnemonicParsing="false" onAction="#onButton" prefHeight="27.0" prefWidth="234.0" text="Register" />

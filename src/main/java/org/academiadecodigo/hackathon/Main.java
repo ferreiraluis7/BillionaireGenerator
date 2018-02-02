@@ -14,7 +14,7 @@ import org.academiadecodigo.hackathon.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import javax.persistence.EntityManagerFactory;
+
 
 public class Main extends javafx.application.Application {
 

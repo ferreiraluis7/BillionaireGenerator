@@ -14,7 +14,7 @@
     <children>
         <ImageView fitHeight="71.0" fitWidth="41.0" layoutX="735.0" layoutY="667.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../0.png" />
+                <Image url="@img/0.png" />
             </image>
         </ImageView>
         <MenuBar prefHeight="36.0" prefWidth="1024.0">
@@ -35,45 +35,45 @@
         <Label layoutX="611.0" layoutY="676.0" text="3x" />
         <ImageView fitHeight="74.0" fitWidth="41.0" layoutX="643.0" layoutY="667.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../1.png" />
+                <Image url="@img/1.png" />
             </image>
         </ImageView>
         <ImageView fitHeight="47.0" fitWidth="41.0" layoutX="957.0" layoutY="668.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../2.png" />
+                <Image url="@img/2.png" />
             </image>
         </ImageView>
         <Label layoutX="504.0" layoutY="676.0" text="100x" />
         <ImageView fitHeight="50.0" fitWidth="45.0" layoutX="560.0" layoutY="659.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../3.png" />
+                <Image url="@img/3.png" />
             </image>
         </ImageView>
         <ImageView fx:id="roulette0" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../0.png" />
+            <Image url="@img/0.png" />
          </image></ImageView>
         <Button fx:id="quitButton" layoutX="452.0" layoutY="585.0" mnemonicParsing="false" onMouseClicked="#quitBet" text="Chicken Out" />
       <ImageView fx:id="roulette1" fitHeight="150.0" fitWidth="162.0" layoutX="437.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="@../1.png" />
+            <Image url="@img/1.png" />
          </image>
       </ImageView>
       <ImageView fx:id="roulette2" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="@../2.png" />
+            <Image url="@img/2.png" />
          </image>
       </ImageView>
       <ImageView fx:id="roulette3" fitHeight="150.0" fitWidth="162.0" layoutX="450.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="@../3.png" />
+            <Image url="@img/3.png" />
          </image>
       </ImageView>
       <Label fx:id="console" alignment="CENTER" contentDisplay="CENTER" layoutX="248.0" layoutY="443.0" prefHeight="26.0" prefWidth="530.0" textAlignment="CENTER" />
       <Label fx:id="coins" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="676.0" prefHeight="26.0" prefWidth="187.0" textAlignment="CENTER" />
       <ImageView fitHeight="50.0" fitWidth="45.0" layoutX="242.0" layoutY="671.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@4.png" />
+            <Image url="@img/4.png" />
          </image>
       </ImageView>
     </children>

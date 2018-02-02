@@ -96,11 +96,6 @@ public class GamblingController implements Controller {
             return;
         }
 
-        if(Double.parseDouble(bet.getText()) == 0.0){
-            console.setText("No risk, no reward. Bet something");
-            bet.setText("");
-            return;
-        }
 
         if (!bet.getText().matches("[0-9]*\\.?[0-9]+")) {
             console.setText("Numeric Positive Values please");
