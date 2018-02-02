@@ -26,6 +26,12 @@ public class LoginController implements Controller {
     private GridPane gridPane;
 
     @FXML
+    private MenuItem backMenu;
+
+    @FXML
+    private MenuItem logoutMenu;
+
+    @FXML
     private Label emailLabel;
 
     @FXML
@@ -114,6 +120,8 @@ public class LoginController implements Controller {
         User user =  userService.findbyName(usernameField.getText());
         userService.setCurrentUser(user);
 
+
+
         showConsoleText("Login accepted");
         navigation.loadScreen("wallet");
 
@@ -145,6 +153,7 @@ public class LoginController implements Controller {
             showConsoleText("Username taken");
             return;
         }
+
 
         User user = new User(usernameField.getText(), Security.getHash(passwordField.getText()), emailField.getText());
         user.setWallet(new Wallet());
@@ -182,6 +191,7 @@ public class LoginController implements Controller {
         }
 
     }
+
 
     public UserService getUserService() {
         return userService;

@@ -104,7 +104,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.academiadecodigo.bootcamp.Main</mainClass>
+                            <mainClass>org.academiadecodigo.hackathon.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

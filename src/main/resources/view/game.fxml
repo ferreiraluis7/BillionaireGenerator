@@ -21,14 +21,15 @@
             <menus>
                 <Menu fx:id="menu" mnemonicParsing="false" text="Menu">
                     <items>
-                        <MenuItem fx:id="logoutMenu" mnemonicParsing="false" text="Logout" />
-                        <MenuItem fx:id="closeMenu" mnemonicParsing="false" text="Close" />
+                        
+                        <MenuItem fx:id="goBack" mnemonicParsing="false" onAction="#goBack" text="Back" />
+                  <MenuItem fx:id="logoutMenu1" mnemonicParsing="false" onAction="#logout" text="Logout" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
-        <TextField fx:id="bet" layoutX="404.0" layoutY="484.0" promptText="Insert bet" />
-        <Button fx:id="tryButton" layoutX="403.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#placeBet" prefHeight="32.0" prefWidth="206.0" text="Try your luck" />
+        <TextField fx:id="bet" layoutX="410.0" layoutY="484.0" promptText="Insert bet" />
+        <Button fx:id="tryButton" layoutX="409.0" layoutY="529.0" mnemonicParsing="false" onMouseClicked="#placeBet" prefHeight="32.0" prefWidth="206.0" text="Try your luck" />
         <Label layoutX="700.0" layoutY="675.0" text="2x" />
         <Label layoutX="791.0" layoutY="675.0" text="You lose, sucker!" />
         <Label layoutX="611.0" layoutY="676.0" text="3x" />
@@ -48,24 +49,31 @@
                 <Image url="@../3.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="roulette0" fitHeight="150.0" fitWidth="200.0" layoutX="412.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="roulette0" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../0.png" />
          </image></ImageView>
-        <Button fx:id="quitButton" layoutX="446.0" layoutY="585.0" mnemonicParsing="false" onMouseClicked="#quitBet" text="Chicken Out" />
-      <ImageView fx:id="roulette1" fitHeight="150.0" fitWidth="200.0" layoutX="412.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true" visible="false">
+        <Button fx:id="quitButton" layoutX="452.0" layoutY="585.0" mnemonicParsing="false" onMouseClicked="#quitBet" text="Chicken Out" />
+      <ImageView fx:id="roulette1" fitHeight="150.0" fitWidth="162.0" layoutX="437.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="roulette2" fitHeight="150.0" fitWidth="200.0" layoutX="412.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="roulette2" fitHeight="150.0" fitWidth="200.0" layoutX="437.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="roulette3" fitHeight="150.0" fitWidth="200.0" layoutX="412.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="roulette3" fitHeight="150.0" fitWidth="162.0" layoutX="450.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../3.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="console" alignment="CENTER" contentDisplay="CENTER" layoutX="248.0" layoutY="443.0" prefHeight="26.0" prefWidth="530.0" textAlignment="CENTER" />
+      <Label fx:id="coins" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="676.0" prefHeight="26.0" prefWidth="187.0" textAlignment="CENTER" />
+      <ImageView fitHeight="50.0" fitWidth="45.0" layoutX="242.0" layoutY="671.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@4.png" />
          </image>
       </ImageView>
     </children>

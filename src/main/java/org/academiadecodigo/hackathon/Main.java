@@ -16,7 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.persistence.EntityManagerFactory;
 
-public class Test extends javafx.application.Application {
+public class Main extends javafx.application.Application {
 
     private Thread t1;
 
@@ -40,7 +40,9 @@ public class Test extends javafx.application.Application {
 
         navigation.setStage(primaryStage);
 
-        navigation.loadScreen("game");
+
+
+        navigation.loadScreen("login");
         primaryStage.setResizable(false);
 
         primaryStage.setTitle("Billionaire Generator");

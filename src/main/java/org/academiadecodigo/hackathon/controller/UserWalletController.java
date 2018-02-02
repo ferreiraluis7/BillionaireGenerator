@@ -34,11 +34,9 @@ public class UserWalletController implements Controller {
     @FXML
     private MenuItem data;
 
-    @FXML
-    private MenuItem logOut;
 
     @FXML
-    private MenuItem close;
+    private MenuItem casinoMenu;
 
     @FXML
     private MenuItem BlaBlaBla;
@@ -87,9 +85,10 @@ public class UserWalletController implements Controller {
     public void initialize(){
         if(this.userService == null){
             throw new IllegalStateException("Unable to load user service from registry");
-
         }
+
         updateBudget();
+        messageLabel.setText("");
         Timer timer = new Timer();
 
         timer.scheduleAtFixedRate(new TimerTask() {
@@ -121,21 +120,30 @@ public class UserWalletController implements Controller {
     private void updateBudget() {
         dollar.setText(Double.toString(userService.getCurrentUser().getWallet().getdAmount()) + "$");
 
-        criptoCoins.setText(Double.toString(userService.getCurrentUser().getWallet().getcAmount()) + "฿");
+        criptoCoins.setText(Double.toString(userService.getCurrentUser().getWallet().getcAmount()));
     }
 
     @FXML
     void buy(ActionEvent event) {
         if (buyField.getText().isEmpty()) {
-            messageLabel.setText("You don't have enough money");
+            messageLabel.setText("You need to introduce a quantity");
             return;
         }
-        if(!buyField.getText().matches("[-+]?[0-9]*\\.?[0-9]+")){
-            messageLabel.setText("Only numeric values");
+        if(!buyField.getText().matches("[0-9]*\\.?[0-9]+")){
+            messageLabel.setText("Only numeric/positive values");
             return;
         }
 
+        if(Double.parseDouble(buyField.getText()) == 0.0){
+            messageLabel.setText("C'mon! 0 is not a number!");
+        }
+
+        if (Double.parseDouble(buyField.getText()) > userService.getCurrentUser().getWallet().getdAmount()){
+            messageLabel.setText("You don't have enough money");
+        }
+
         userService.buy(Double.parseDouble(buyField.getText()));
+        messageLabel.setText("");
 
         updateBudget();
         clearField();
@@ -145,14 +153,23 @@ public class UserWalletController implements Controller {
     @FXML
     void sell(ActionEvent event) {
         if (sellField.getText().isEmpty()) {
-            messageLabel.setText("You on't have enough money");
+            messageLabel.setText("You need to introduce a quantity");
             return;
         }
-        if(!sellField.getText().matches("[-+]?[0-9]*\\.?[0-9]+")){
-            messageLabel.setText("Only numeric values");
+        if(!sellField.getText().matches("[0-9]*\\.?[0-9]+")){
+            messageLabel.setText("Only numeric/positive values");
             return;
         }
 
+        if(Double.parseDouble(sellField.getText()) == 0.0){
+            messageLabel.setText("C'mon! 0 is not a number!");
+        }
+
+        if (Double.parseDouble(sellField.getText()) > userService.getCurrentUser().getWallet().getcAmount()){
+            messageLabel.setText("You don't have enough HackerCoins invested");
+        }
+
+        messageLabel.setText("");
         userService.sell(Double.parseDouble(sellField.getText()));
         updateBudget();
         clearField();
@@ -169,9 +186,23 @@ public class UserWalletController implements Controller {
             return;
         }
 
-        if(!transferField.getText().matches("[-+]?[0-9]*\\.?[0-9]+")){
-            messageLabel.setText("Only numeric values");
+        if (user.equals(userService.getCurrentUser())){
+            messageLabel.setText("You can't send money to yourself");
             return;
+
+        }
+
+        if(!transferField.getText().matches("[0-9]*\\.?[0-9]+")){
+            messageLabel.setText("Only numeric/positive values");
+            return;
+        }
+
+        if(Double.parseDouble(transferField.getText()) == 0.0){
+            messageLabel.setText("C'mon! 0 is not a number!");
+        }
+
+        if (Double.parseDouble(transferField.getText()) > userService.getCurrentUser().getWallet().getcAmount()){
+            messageLabel.setText("You don't have enough HackerCoins invested");
         }
 
         userService.transfer(Double.parseDouble(transferField.getText()), user);
@@ -183,7 +214,13 @@ public class UserWalletController implements Controller {
     }
 
     @FXML
+    void goCasino(ActionEvent event){
+        navigation.loadScreen("game");
+    }
+
+    @FXML
     void goBack(ActionEvent event) {
+        userService.setCurrentUser(null);
         navigation.loadScreen("login");
     }
 

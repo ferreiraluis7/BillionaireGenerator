@@ -26,7 +26,10 @@
                   <MenuItem fx:id="close" mnemonicParsing="false" onAction="#goBack" text="Back" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Casino" />
+          <Menu mnemonicParsing="false" text="Gamble">
+               <items>
+                  <MenuItem fx:id="casinoMenu" mnemonicParsing="false" onAction="#goCasino" text="Roullette" />
+               </items></Menu>
         </menus>
       </MenuBar>
       <Button fx:id="buy" alignment="CENTER" contentDisplay="CENTER" layoutX="673.0" layoutY="274.0" mnemonicParsing="false" onAction="#buy" prefHeight="35.0" prefWidth="144.0" text="Buy" textAlignment="CENTER" />
@@ -45,5 +48,10 @@
       </ImageView>
       <Label fx:id="messageLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="245.0" layoutY="675.0" prefHeight="35.0" prefWidth="535.0" textAlignment="CENTER" />
       <TextField fx:id="emailField" alignment="CENTER" layoutX="641.0" layoutY="490.0" promptText="destination email" />
+      <ImageView fitHeight="36.0" fitWidth="47.0" layoutX="824.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@4.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
