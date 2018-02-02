@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id = "navigation" class="org.academiadecodigo.hackathon.Navigation">
+        <property name = "controllers">
+            <map>
+                <entry key="LoginController" value-ref="loginController"/>
+                <entry key="UserWalletController" value-ref="walletController"/>
+                <entry key="GamblingController" value-ref="gamblingController"/>
+            </map>
+        </property>
+    </bean>
+
+
+    <bean id = "loginController" class="org.academiadecodigo.hackathon.controller.LoginController">
+        <constructor-arg name="userService" ref="userService"/>
+        <constructor-arg name ="navigation" ref = "navigation"/>
+    </bean>
+
+    <bean id = "walletController" class="org.academiadecodigo.hackathon.controller.UserWalletController">
+        <constructor-arg name="userService" ref="userService"/>
+        <constructor-arg name ="navigation" ref = "navigation"/>
+    </bean>
+
+    <bean id="gamblingController" class="org.academiadecodigo.hackathon.controller.GamblingController">
+        <constructor-arg name="userService" ref="userService"/>
+        <constructor-arg name="navigation" ref="navigation"/>
+    </bean>
+
+
+</beans>

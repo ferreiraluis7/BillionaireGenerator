@@ -1,0 +1,82 @@
+.root {
+
+    -fx-background-color: #FF9900;
+
+}
+
+.label{
+
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+
+}
+
+.hyperlink{
+
+    -fx-font-size: 16px ;
+    -fx-text-fill: white;
+
+}
+
+.hyperlink:hover{
+
+    -fx-text-fill: #e4e4e4;
+
+}
+
+.text-field{
+
+    -fx-font-size: 16px;
+
+}
+
+.button{
+
+    -fx-border-radius: 20px 20px 20px 20px;
+    -fx-background-radius: 20px 20px 20px 20px;
+    -fx-background-color: white;
+    -fx-text-fill: #FF9900;
+    -fx-font-size: 16px;
+
+}
+
+.button:hover{
+
+    -fx-background-color: #e4e4e4;
+
+}
+
+.menu-bar{
+
+    -fx-background-color: #1cc538;
+    -fx-fill: #1cc538;
+    -fx-skin: #1cc538;
+
+}
+
+.menu-item {
+
+    -fx-background-color: #1cc538;
+    -fx-fill: #1cc538;
+
+}
+
+.menu-item:hover{
+
+    -fx-background-color: #1c9f37;
+
+}
+
+.menu-button{
+
+    -fx-background-color: #1cc538;
+    -fx-fill: #1cc538;
+
+}
+
+.context-menu{
+
+    -fx-background-color: #1cc538;
+    -fx-fill: #1cc538;
+
+}
