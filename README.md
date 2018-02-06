@@ -1,5 +1,7 @@
 # BillionaireGenerator
 
+![alt text](https://raw.githubusercontent.com/ferreiraluis7/BillionaireGenerator/master/src/main/resources/view/img/ScreenShot.png)
+
 
 1.Overview
 
